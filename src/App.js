@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from 'react'
 
-function App() {
-  return <div>App</div>;
-}
-
-export default App;
+const App = memo(() => {
+  return <div>App</div>
+})
+console.log('123')
+export default App
