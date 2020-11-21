@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 import { SearchOutlined } from '@ant-design/icons'
 import { headerLinks } from '@/common/local-data'
+import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
 
 import { Input } from 'antd'
-import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
 
 const Index = memo(() => {
   // 页面逻辑
@@ -31,7 +31,10 @@ const Index = memo(() => {
         {/* 左边部分 */}
         <HeaderLeft>
           {/* LOGO */}
-          <a href="#/" className="logo sprite_01" />
+          {/* 这里不给内容可能会报一个警告,所以给个值也便于SEO优化,设置text-indent解决问题 */}
+          <a href="#/" className="logo sprite_01">
+            网易云音乐
+          </a>
           {/* 顶部六个大分类 */}
           <ul className="selectList">
             {headerLinks.map((item, index) => {

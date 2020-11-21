@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
   height: 73px;
   font-size: 14px;
   background-color: #242424;
@@ -21,6 +21,7 @@ export const HeaderLeft = styled.div`
     width: 176px;
     height: 69px;
     background-position: 0 0;
+    text-indent: -9999px;
   }
 
   .selectList {
