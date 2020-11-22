@@ -13,7 +13,7 @@ const Index = memo(() => {
     // 根据index来判断到底渲染成路由还是普通a标签
     if (index < 3) {
       return (
-        <NavLink to={item.link} exact>
+        <NavLink to={item.link}>
           {item.title}
           {/* 三角形箭头图标 */}
           <i className="icon sprite_01" />
