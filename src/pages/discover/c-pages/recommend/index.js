@@ -6,7 +6,7 @@ import { getTopBannerAction } from './store/actionCreators'
 function Recommend() {
   const { topBanners } = useSelector(
     (state) => ({
-      topBanners: state.recommend.topBanners
+      topBanners: state.recommend.get('topBanners')
     }),
     shallowEqual
   )
