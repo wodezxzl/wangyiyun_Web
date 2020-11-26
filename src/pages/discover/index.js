@@ -3,20 +3,22 @@ import { renderRoutes } from 'react-router-config'
 import { NavLink } from 'react-router-dom'
 
 import { dicoverMenu } from '@/common/local-data'
-import { DiscoverWrapper } from './style'
+import { DiscoverWrapper, TopMenu } from './style'
 
 const Index = memo((props) => {
   return (
     <DiscoverWrapper>
-      <ul className="topMenu wrap-v1">
-        {dicoverMenu.map((item) => {
-          return (
-            <li key={item.title}>
-              <NavLink to={item.link}>{item.title}</NavLink>
-            </li>
-          )
-        })}
-      </ul>
+      <div className="top">
+        <TopMenu className="wrap-v1">
+          {dicoverMenu.map((item) => {
+            return (
+              <li key={item.title}>
+                <NavLink to={item.link}>{item.title}</NavLink>
+              </li>
+            )
+          })}
+        </TopMenu>
+      </div>
       {renderRoutes(props.route.routes)}
     </DiscoverWrapper>
   )

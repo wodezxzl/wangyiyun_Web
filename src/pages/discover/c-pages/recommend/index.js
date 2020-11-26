@@ -1,24 +1,13 @@
-import React, { memo, useEffect } from 'react'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import React, { memo } from 'react'
 
-import { getTopBannerAction } from './store/actionCreators'
+import TopBanner from '@/pages/discover/c-pages/recommend/c-cpns/top-banner'
 
 function Recommend() {
-  const { topBanners } = useSelector(
-    (state) => ({
-      // topBanners: state.get('recommend').get('topBanners')
-      // 上面方式的语法糖
-      topBanners: state.getIn(['recommend', 'topBanners'])
-    }),
-    shallowEqual
+  return (
+    <div>
+      <TopBanner />
+    </div>
   )
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getTopBannerAction())
-  }, [dispatch])
-
-  return <div>Recommend: {topBanners.length}</div>
 }
 
 export default memo(Recommend)
