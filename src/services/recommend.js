@@ -27,3 +27,13 @@ export function getNewAlbums(limit) {
     }
   })
 }
+
+// 4.排行榜数据
+export function getRankList(idx) {
+  return request({
+    url: '/top/list',
+    params: {
+      idx
+    }
+  })
+}
