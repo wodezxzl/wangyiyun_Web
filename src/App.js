@@ -9,6 +9,7 @@ import { HashRouter } from 'react-router-dom'
 
 import AppHeader from '@/components/app-header'
 import AppFooter from '@/components/app-footer'
+import AppPlayerBar from '@/pages/player/app-player-bar'
 
 const App = memo(() => {
   return (
@@ -17,6 +18,7 @@ const App = memo(() => {
         <AppHeader />
         {renderRoutes(routes)}
         <AppFooter />
+        <AppPlayerBar />
       </HashRouter>
     </Provider>
   )
