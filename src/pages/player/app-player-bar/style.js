@@ -172,15 +172,24 @@ export const Operate = styled.div`
       background-position: ${(props) => {
         switch (props.sequence) {
           case 1:
-            return '-66px -248px'
-          case 2:
             return '-66px -344px'
+          case 2:
+            return '-66px -248px'
           default:
             return '-3px -344px'
         }
       }};
       &:hover {
-        background-position: -33px -344px;
+        background-position: ${(props) => {
+          switch (props.sequence) {
+            case 1:
+              return '-93px -344px'
+            case 2:
+              return '-93px -248px'
+            default:
+              return '-33px -344px'
+          }
+        }};
       }
     }
     .playlist {
