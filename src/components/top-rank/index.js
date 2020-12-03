@@ -1,13 +1,24 @@
 import React, { memo } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { getSizeImg } from '@/utils/data-format'
+import { getSongDetailAction } from '@/pages/player/store/actionCreators'
 
 import { TopRankWrapper } from './style'
 
 function TopRank(props) {
+  // props add state
   const {
     info: { coverImgUrl, name, tracks = [] }
   } = props
+
+  // redux Hooks
+  const dispatch = useDispatch()
+
+  // other handle
+  const playMusic = (item) => {
+    dispatch(getSongDetailAction(item.id))
+  }
 
   return (
     <TopRankWrapper>
@@ -37,7 +48,7 @@ function TopRank(props) {
                   {item.name}
                 </a>
                 <div className="operate">
-                  <button className="btn sprite_02 play" />
+                  <button className="btn sprite_02 play" onClick={(e) => playMusic(item)} />
                   <button className="btn sprite_icon2 addTo" />
                   <button className="btn sprite_02 favor" />
                 </div>

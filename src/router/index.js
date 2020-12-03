@@ -1,15 +1,17 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 
-import Discover from '@/pages/discover'
-import Mine from '@/pages/mine'
-import Friend from '@/pages/friend'
-import Recommend from '@/pages/discover/c-pages/recommend'
-import Rank from '@/pages/discover/c-pages/rank'
-import Songs from '@/pages/discover/c-pages/songs'
-import DjRadio from '@/pages/discover/c-pages/djRadio'
-import Artist from '@/pages/discover/c-pages/artist'
-import NewAlbum from '@/pages/discover/c-pages/newAlbum'
+// 使用懒加载进行优化
+const Discover = React.lazy(() => import('@/pages/discover'))
+const Mine = React.lazy(() => import('@/pages/mine'))
+const Friend = React.lazy(() => import('@/pages/friend'))
+const Recommend = React.lazy(() => import('@/pages/discover/c-pages/recommend'))
+const Rank = React.lazy(() => import('@/pages/discover/c-pages/rank'))
+const Songs = React.lazy(() => import('@/pages/discover/c-pages/songs'))
+const DjRadio = React.lazy(() => import('@/pages/discover/c-pages/djRadio'))
+const Artist = React.lazy(() => import('@/pages/discover/c-pages/artist'))
+const NewAlbum = React.lazy(() => import('@/pages/discover/c-pages/newAlbum'))
+const Player = React.lazy(() => import('@/pages/player'))
 
 const routes = [
   {
@@ -49,6 +51,10 @@ const routes = [
       {
         path: '/discover/newAlbum',
         component: NewAlbum
+      },
+      {
+        path: '/discover/player',
+        component: Player
       }
     ]
   },
